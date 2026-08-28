@@ -1,0 +1,169 @@
+\documentclass[letterpaper,10.5pt]{article}
+
+% ---------- Page & Font ----------
+\usepackage{geometry}
+\geometry{left=1.1cm, right=1.1cm, top=0.45cm, bottom=0.45cm}
+
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% ---------- Core Packages ----------
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{textcase}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fontawesome5}
+\usepackage{fancyhdr}
+
+% ---------- Header / Footer ----------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\parindent}{0pt}
+
+% ---------- Section Formatting ----------
+\titleformat{\section}
+  {\vspace{0pt}\raggedright\small\bfseries\color{black}}
+  {}{0em}{\MakeUppercase}[\vspace{-3pt}\color{black}\rule{\linewidth}{0.6pt}\vspace{0pt}]
+
+\titlespacing{\section}{0pt}{5pt}{3pt}
+
+% ---------- Custom Commands ----------
+\newcommand{\resumeSubheading}[4]{
+  \vspace{2pt}
+  {\small\textbf{#1}}\hfill{\small #4}\\[-1pt]
+  {\footnotesize\textit{#3}}\hfill{\footnotesize\textit{#2}}\\[-5pt]
+}
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubItem}[1]{
+  \item[]\vspace{4pt}\small{\textbf{#1}}\vspace{2pt}
+}
+\newcommand{\resumeItemListStart}{
+  \begin{itemize}[leftmargin=1.1em, itemsep=0pt, topsep=2pt, parsep=0pt]
+}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-1pt}}
+
+% ================= DOCUMENT =================
+\begin{document}
+
+% ---------- Header ----------
+\begin{center}
+  {\fontsize{20}{22}\selectfont\textbf{Nilesh}}\\[2pt]
+  {\small Software Engineer $\cdot$ Java $\cdot$ Spring Boot $\cdot$ React $\cdot$ Bengaluru, India}\\[2pt]
+  {\footnotesize
+  \href{mailto:nileshkr1706@gmail.com}{\faEnvelope\ nileshkr1706@gmail.com}\enspace\textbar\enspace
+  \href{https://in.linkedin.com/in/nileshkr17/}{\faLinkedin\ linkedin.com/in/nileshkr17}\enspace\textbar\enspace
+  \href{https://github.com/nileshkr17}{\faGithub\ github.com/nileshkr17}\enspace\textbar\enspace
+  \href{https://doclib.pro}{\faGlobe\ doclib.pro}}
+\end{center}
+
+\vspace{-2pt}
+
+% ---------- Summary ----------
+\section{Summary}
+{\small Software Engineer with 2+ years at SAP building distributed identity infrastructure (OAuth 2.0, JWT, SAP CDC/Gigya), Kafka-driven pipelines, and AI-assisted experiences (RAG, LLM orchestration) in Java and Spring Boot. Shipped \textbf{DocLib} --- production React PWA with \textbf{60+ active users}. Published open-source npm packages with \textbf{200+ downloads}.}
+
+% ---------- Technical Skills ----------
+\vspace{4pt}
+\vspace{4pt}
+\vspace{4pt}
+\section{Technical Skills}
+{\small
+\textbf{Languages:} Java (8, 11), JavaScript, TypeScript, Python \quad \textbf{Testing:} JUnit, Mockito, Postman, Newman \\
+\textbf{Backend:} Spring Boot, Spring MVC, Node.js, REST APIs, GraphQL, Microservices \\
+\textbf{AI / GenAI:} RAG Pipelines, LLM Orchestration, Copilot Integration, LangChain, Prompt Engineering \\
+\textbf{Frontend:} React 19, React Router, Vite, Tailwind CSS, PWA (Workbox, IndexedDB) \\
+\textbf{Distributed Systems:} Apache Kafka, Event-Driven Architecture, Eventual Consistency \quad \textbf{Databases:} MongoDB, PostgreSQL, Redis \\
+\textbf{Identity \& Security:} OAuth 2.0, OIDC, JWT, SAP CDC (Gigya), RBAC, MFA, Zero-Trust \\
+\textbf{Cloud \& DevOps:} AWS, Docker, Kubernetes, Jenkins, GitHub Actions, CI/CD \quad \textbf{Observability:} ELK Stack, Kibana, Grafana
+}
+
+% ---------- Experience ----------
+\vspace{4pt}
+\vspace{4pt}
+\vspace{4pt}
+\section{Experience}
+
+\resumeSubheading
+{Software Engineer (Scholar)}{Bengaluru, India}
+{SAP Labs $\cdot$ Java, Spring Boot, Kafka, MongoDB, OAuth 2.0, JWT, SAP CDC (Gigya), Kubernetes, AWS}{Aug 2024 -- Present}
+\resumeItemListStart
+  \resumeSubItem{SAP CX Sales Cloud (Jun 2025 -- Present)}
+  \resumeItem{Resolved Kafka consumer lag across Mail Sync and Group Sync topics, \textbf{reducing message backlog by 50\%} under peak load --- chose partition rebalancing over consumer scaling after profiling lag per topic.}
+  \resumeItem{Architected \textbf{event-driven search refresh pipeline} --- MongoDB writes fan out through Kafka to distributed search indexes, enforcing eventual consistency across all tenants.}
+  \resumeItem{Designed \textbf{JWT-based zero-trust impersonation system} (Login As Another User) with claim scoping, RBAC validation, and cryptographic audit logging --- deployed across enterprise tenants.}
+  \resumeItem{Built \textbf{automated API regression suite} (Postman/Newman, 30+ scenarios) integrated into CI/CD --- reduced regression testing from manual execution to \textbf{fully automated CI/CD validation}.}
+
+  \resumeSubItem{SAP SuccessFactors RCM (Aug 2024 -- May 2025)}
+  \resumeItem{Built \textbf{end-to-end candidate onboarding and authentication workflows} using \textbf{OAuth 2.0/JWT} with configurable tenant-level policies, rolled out across all enterprise tenants.}
+  \resumeItem{Integrated \textbf{SAP Customer Data Cloud (Gigya)} for phone OTP login, social login, \textbf{SMS MFA}, and OIDC/OAuth 2.0 authentication, aligning with \textbf{GDPR} and SAP Cloud Security Guidelines.}
+  \resumeItem{Hardened auth security: disabled Gigya voice code by default, enforced configurable \textbf{password policies} (entropy, expiry, history), and resolved phone/email sync edge cases causing login failures.}
+  \resumeItem{Built \textbf{RESTful deduplication APIs} using RFC-compliant email normalization and indexed lookup, eliminating duplicate candidate records across multi-tenant datasets.}
+  \resumeItem{Diagnosed auth edge cases including \textbf{token expiry races}, malformed JWT claims, and invalid sync payloads via defensive validation layers, reducing auth-related production failures.}
+\resumeItemListEnd
+
+% ---------- Projects ----------
+\vspace{4pt}
+\vspace{4pt}
+\vspace{4pt}
+\section{Projects}
+
+\resumeSubheading
+{DocLib --- Offline PWA PDF Reader}{\href{https://doclib.pro}{\faGlobe\ doclib.pro}\enspace\href{https://github.com/nileshkr17}{\faGithub\ GitHub}}
+{React 19, Vite, Dexie.js, Workbox, IndexedDB, GenAI (Groq / Gemini / OpenAI)}{2026}
+
+\resumeItemListStart
+  \resumeItem{Shipped production PWA (iOS, Android, desktop) with \textbf{60+ active users} --- full offline support via Workbox service workers, versioned IndexedDB schema with live migrations.}
+  \resumeItem{Built multi-provider \textbf{Ask AI} (Groq/Gemini/OpenAI) with BYOK, AES-GCM encrypted key storage, and RAG-style PDF context injection; implemented prompt injection defenses --- all client-side, zero backend.}
+  \resumeItem{Deployed on Netlify with CI/CD on git push; React Router SPA, annotation engine, reading stats dashboard, and AI flashcard generation.}
+\resumeItemListEnd
+
+\resumeSubheading
+{VendorIQ.AI --- Invoice Automation Platform}{\href{https://github.com/BITSSAP2025AugAPIBP3Sections/APIBP-20242YA-Team-1}{\faGithub\ GitHub}}
+{Node.js, Python, Apache Kafka, MongoDB, LangChain, RAG, Google APIs}{2025}
+
+\resumeItemListStart
+  \resumeItem{Automated end-to-end invoice ingestion from Gmail using a \textbf{3-service Kafka pipeline}, eliminating manual processing.}
+  \resumeItem{Implemented \textbf{RAG pipeline} over invoice data enabling natural language querying; integrated Gmail, Drive, and Sheets APIs for automated reporting.}
+\resumeItemListEnd
+
+% ---------- Open Source & npm ----------
+\vspace{4pt}
+\vspace{4pt}
+\vspace{4pt}
+\section{Open Source \& Published Packages}
+
+\resumeSubheading
+{deadbutton --- Dead UI Element Detector}{\href{https://www.npmjs.com/package/deadbutton}{\faNpm\ npm}\enspace\href{https://deadbutton.netlify.app}{\faGlobe\ Live}}
+{TypeScript, npm $\cdot$ 200+ downloads}{2024}
+
+\resumeItemListStart
+  \resumeItem{npm package detecting unused UI elements via click telemetry; red/yellow/green overlays with \textbf{confidence-scored deletion recommendations} --- zero backend, zero privacy exposure.}
+  \resumeItem{Implemented \textbf{stateless confidence scoring algorithm} factoring element age, click frequency, and recency decay; usable via CDN one-liner or npm import.}
+\resumeItemListEnd
+
+\resumeSubheading
+{{@nileshkr17/generateusername} {\normalfont\footnotesize --- generates 5 username variants from name + DOB}}{\href{https://www.npmjs.com/package/@nileshkr17/generateusername}{\faNpm\ npm}}
+{JavaScript, npm}{2022}
+
+% ---------- Education ----------
+\vspace{4pt}
+\vspace{4pt}
+\vspace{4pt}
+\section{Education}
+
+\resumeSubheading
+{BITS Pilani WILP}{2024 -- 2026}
+{M.Tech in Software Engineering}{}
+
+\vspace{1pt}
+
+\resumeSubheading
+{Silicon Institute of Technology, Bhubaneswar}{2020 -- 2024}
+{B.Tech in Computer Science \& Engineering }{}
+
+\end{document}
