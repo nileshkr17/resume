@@ -8,7 +8,7 @@ I build backend systems using **Java, Spring Boot, Kafka, MongoDB, OAuth 2.0, JW
 
 ## 📄 Resume
 
-**[View / Download Resume](./Nilesh2026%281%29.pdf)**
+**[View / Download Resume](./Nilesh.pdf)**
 
 ## 💼 Experience
 
